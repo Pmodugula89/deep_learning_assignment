@@ -3,7 +3,11 @@ import torchvision
 import torchvision.transforms as transforms
 import torch.nn as nn
 import torch.optim as optim
-import matplotlib.pyplot as plt
+
+try:
+    import matplotlib.pyplot as plt
+except Exception:
+    plt = None
 
 transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
 
@@ -14,11 +18,12 @@ train_loader = torch.utils.data.DataLoader(trainset, batch_size=32, shuffle=True
 test_loader = torch.utils.data.DataLoader(testset, batch_size=32, shuffle=False)
 
 # Sample visualization
-image, label = trainset[0]
-plt.imshow(image.squeeze(), cmap='gray')
-plt.title(f"Sample Image - Label {label}")
-plt.axis("off")
-plt.show()
+if plt is not None:
+    image, label = trainset[0]
+    plt.imshow(image.squeeze(), cmap="gray")
+    plt.title(f"Sample Image - Label {label}")
+    plt.axis("off")
+    plt.show()
 
 # Define FCNN
 class FCNN(nn.Module):
