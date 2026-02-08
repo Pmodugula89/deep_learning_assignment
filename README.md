@@ -26,5 +26,5 @@ GitHub Copilot: AI-assisted coding
 GitHub: Version control and submission
 ⚙️ Installation & Setup
 Clone the repository:
-git clone https://github.com/Manishakittu/deep_learning_assignment
+git clone [https://github.com/Manishakittu/deep_learning_assignment](https://github.com/Pmodugula89/deep_learning_assignment.git)
 cd deep_learning_assignment
